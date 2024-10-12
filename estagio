@@ -1,0 +1,142 @@
+# 1. QUESTÃO - Calculando em R
+
+# Inicialização das variáveis
+INDICE <- 13
+SOMA <- 0
+K <- 0
+
+# Loop para calcular a soma
+while (K < INDICE) {
+  K <- K + 1
+  SOMA <- SOMA + K
+}
+
+# Imprimir o resultado
+print(SOMA)
+
+
+
+
+# 2. QUESTÃO - Calculando em Python
+
+# Função para calcular a sequência de Fibonacci
+def fibonacci_sequence(n):
+    fib_sequence = [0, 1]  # Inicializa a sequência com 0 e 1
+    while True:
+        next_value = fib_sequence[-1] + fib_sequence[-2]
+        if next_value > n:  # Para quando o próximo valor excede n
+            break
+        fib_sequence.append(next_value)
+    return fib_sequence
+
+# Função para verificar se o número está na sequência
+def is_fibonacci(n):
+    fib_sequence = fibonacci_sequence(n)
+    return n in fib_sequence
+
+# Número a ser verificado
+numero = 94  # Definido diretamente como 94
+
+# Verifica se o número pertence à sequência de Fibonacci
+if is_fibonacci(numero):
+    print(f"O número {numero} pertence à sequência de Fibonacci.")
+else:
+    print(f"O número {numero} não pertence à sequência de Fibonacci.")
+
+# RESULTADO
+O número 94 não pertence à sequência de Fibonacci.
+
+
+
+
+# 3. QUESTÃO - Calculando em Python
+
+import json
+
+# Dados de faturamento em formato JSON
+data_json = '''
+{
+  "faturamento_diario": [0, 100, 200, 0, 300, 0, 400, 150, 0, 500]
+}
+'''
+
+# Carregar os dados JSON
+data = json.loads(data_json)
+faturamento_diario = data["faturamento_diario"]
+
+# Filtrando os dias com faturamento (ignorando os dias sem faturamento)
+faturamento_filtrado = [valor for valor in faturamento_diario if valor > 0]
+
+# Cálculo do menor e maior faturamento
+menor_faturamento = min(faturamento_filtrado)
+maior_faturamento = max(faturamento_filtrado)
+
+# Cálculo da média mensal
+media_mensal = sum(faturamento_filtrado) / len(faturamento_filtrado)
+
+# Contagem de dias acima da média
+dias_acima_da_media = len([valor for valor in faturamento_filtrado if valor > media_mensal])
+
+# Print
+print(f"Menor faturamento: {menor_faturamento}")
+print(f"Maior faturamento: {maior_faturamento}")
+print(f"Média mensal: {media_mensal:.2f}")
+print(f"Número de dias com faturamento acima da média: {dias_acima_da_media}")
+
+# Resultado
+Menor faturamento: 100
+Maior faturamento: 500
+Média mensal: 266.67
+Número de dias com faturamento acima da média: 3
+
+
+
+# 4. QUESTÃO - Calculando em R
+
+# Faturamento mensal por estado
+faturamento <- c(SP = 67836.43, RJ = 36678.66, MG = 29229.88, ES = 27165.48, Outros = 19849.53)
+
+# Cálculo do faturamento total
+faturamento_total <- sum(faturamento)
+
+# Cálculo do percentual de representação de cada estado
+percentuais <- (faturamento / faturamento_total) * 100
+
+# Exibir os resultados
+cat("Faturamento Total: R$", format(faturamento_total, nsmall = 2), "\n")
+cat("Percentuais de Faturamento por Estado:\n")
+for (estado in names(percentuais)) {
+  cat(paste(estado, ":", round(percentuais[estado], 2), "%\n"))
+}
+
+# RESULTADO
+Faturamento Total: R$ 1,298,059.98 
+Percentuais de Faturamento por Estado:
+SP : 52.14 %
+RJ : 28.23 %
+MG : 22.51 %
+ES : 20.91 %
+Outros : 15.31 %
+
+
+
+# 5. QUESTÃO - Calculado em Python
+
+# String a ser invertida (pode ser definida ou informada pelo usuário)
+string_original = "Exemplo de string para inverter"
+
+# Inicializando a string invertida como vazia
+string_invertida = ""
+
+# Invertendo os caracteres da string
+for i in range(len(string_original) - 1, -1, -1):
+    string_invertida += string_original[i]
+
+# Exibindo o resultado
+print("String original:", string_original)
+print("String invertida:", string_invertida)
+
+# RESULTADO
+String original: Exemplo de string para inverter
+String invertida: retniv arap gnirts ed olpmE
+
